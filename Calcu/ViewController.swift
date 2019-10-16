@@ -12,14 +12,24 @@ class ViewController: UIViewController {
     
     var numberOnScreen:Double = 0
     
+    var log: [Any] = []
+    
     @IBOutlet weak var result: UILabel!
     @IBOutlet weak var finalResult: UILabel!
     
     @IBAction func numbers(_ sender: UIButton)
     {
+        
+        if finalResult.text != "" {
+            result.text = ""
+            finalResult.text = ""
+        }
+        
         result.text = result.text! + String(sender.tag-1)
         print(result.text!)
        // numberOnScreen = Double(result.text!)!
+        
+        UserDefaults.standard.array(forKey: "listA")
     }
     
     
@@ -64,6 +74,18 @@ class ViewController: UIViewController {
         guard let value = formatter.string(from: NSNumber(value: mathValue)) else {return}
         //result.text = ""
         finalResult.text = value
+        
+        //log = UserDefaults.standard.array(forKey: "listA")!
+        log.append(result.text! + "=" + value)
+        
+       // print(log)
+        UserDefaults.standard.set(log, forKey: "listA")
+       // var listA = UserDefaults.standard.array(forKey: "listA")
+        
+        if let list = UserDefaults.standard.array(forKey: "listA") {
+            print("List: \(list)")
+        }
+        
     }
     
     override func viewDidLoad() {
