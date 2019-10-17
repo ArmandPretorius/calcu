@@ -87,6 +87,11 @@ class ViewController: UIViewController {
         }
         
     }
+
+    
+    @IBAction func ViewLog(_ sender: UIButton) {
+        print("Log Clicked")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
