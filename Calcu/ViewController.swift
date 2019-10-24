@@ -38,6 +38,21 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func memoryFunctions(_ sender: UIButton) {
+        
+        if sender.tag == 19 {
+            if UserDefaults.standard.string(forKey: "memory") == nil {
+                let memory = finalResult.text
+                UserDefaults.standard.set(memory, forKey: "memory")
+            } else {
+                finalResult.text = ""
+                result.text = result.text! + UserDefaults.standard.string(forKey: "memory")!
+            }
+        }
+        //TODO: other memory functions
+    }
+    
+    
     @IBAction func tipButtonClicked(_ sender: UIButton) {
         
         if equalButton.isHidden == false {
