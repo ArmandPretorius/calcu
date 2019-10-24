@@ -32,6 +32,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+       // tipButton.layer.borderColor
+        tipButton.layer.borderWidth = 1
+        
     }
     
     @IBAction func tipButtonClicked(_ sender: UIButton) {
@@ -127,6 +131,8 @@ class ViewController: UIViewController {
             result.text = finalResult.text
             finalResult.text = ""
         }
+        
+        equal(equalButton)
         
         if sender.tag == 16 {
             result.text = result.text! + "*10/100"
