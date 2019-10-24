@@ -14,8 +14,41 @@ class ViewController: UIViewController {
     
     var log: [Any] = []
     
+    
+    //labels
     @IBOutlet weak var result: UILabel!
     @IBOutlet weak var finalResult: UILabel!
+    
+    //tip buttons
+    
+    @IBOutlet weak var tipTen: UIButton!
+    @IBOutlet weak var tipFifteen: UIButton!
+    @IBOutlet weak var tipTwenty: UIButton!
+    
+    @IBOutlet weak var tipButton: UIButton!
+    @IBOutlet weak var equalButton: UIButton!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func tipButtonClicked(_ sender: UIButton) {
+        
+        if equalButton.isHidden == false {
+            equalButton.isHidden = true
+            tipTen.isHidden = false
+            tipFifteen.isHidden = false
+            tipTwenty.isHidden = false
+        } else {
+            equalButton.isHidden = false
+            tipTen.isHidden = true
+            tipFifteen.isHidden = true
+            tipTwenty.isHidden = true
+        }
+        
+    }
     
     @IBAction func numbers(_ sender: UIButton)
     {
@@ -87,16 +120,41 @@ class ViewController: UIViewController {
         }
         
     }
-
+    
+    
+    @IBAction func tipCalculation(_ sender: UIButton) {
+        if finalResult.text != "" {
+            result.text = finalResult.text
+            finalResult.text = ""
+        }
+        
+        if sender.tag == 16 {
+            result.text = result.text! + "*10/100"
+            print(result.text!)
+        } else if sender.tag == 17 {
+            result.text = result.text! + "*15/100"
+            print(result.text!)
+        } else if sender.tag == 18 {
+            result.text = result.text! + "*20/100"
+            print(result.text!)
+        }
+        equalButton.isHidden = false
+        tipTen.isHidden = true
+        tipFifteen.isHidden = true
+        tipTwenty.isHidden = true
+        
+        equal(equalButton)
+    }
+    
     
     @IBAction func ViewLog(_ sender: UIButton) {
         print("Log Clicked")
+        if let list = UserDefaults.standard.array(forKey: "listA") {
+            print("List: \(list)")
+        }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+
 
 
 }

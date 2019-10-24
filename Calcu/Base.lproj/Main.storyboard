@@ -254,12 +254,15 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                        <integer key="value" value="10"/>
+                                                        <integer key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
                                                         <color key="value" red="0.9882352941176471" green="0.23137254901960785" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tipButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TxF-m1-gPX"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhB-K0-pyS">
                                                 <rect key="frame" x="101" y="21" width="273" height="70"/>
@@ -281,8 +284,73 @@
                                                     <action selector="equal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SZL-zG-PZb"/>
                                                 </connections>
                                             </button>
+                                            <button hidden="YES" opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aG-Qx-3fr">
+                                                <rect key="frame" x="374" y="21" width="91" height="70"/>
+                                                <color key="backgroundColor" red="1" green="0.2156862745" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="Gfs-1B-QYZ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="10%">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="equal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gwX-BC-HHl"/>
+                                                    <action selector="tipCalculation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dam-gb-xot"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFQ-Id-CTu">
+                                                <rect key="frame" x="374" y="21" width="91" height="70"/>
+                                                <color key="backgroundColor" red="1" green="0.2156862745" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="cWp-2V-R2e"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="15%">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="equal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bvZ-sp-e6K"/>
+                                                    <action selector="tipCalculation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mll-ou-hQ3"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gb3-e5-hBA">
+                                                <rect key="frame" x="374" y="21" width="91" height="70"/>
+                                                <color key="backgroundColor" red="1" green="0.2156862745" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="eYt-Tj-w9f"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="20%">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tipCalculation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="85b-U4-qNf"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="gb3-e5-hBA" firstAttribute="width" secondItem="TFQ-Id-CTu" secondAttribute="width" id="2of-Vh-JKb"/>
+                                            <constraint firstItem="TFQ-Id-CTu" firstAttribute="width" secondItem="4aG-Qx-3fr" secondAttribute="width" id="DZO-5o-GOZ"/>
+                                            <constraint firstItem="4aG-Qx-3fr" firstAttribute="width" secondItem="dq8-UO-7e3" secondAttribute="width" id="YD5-r4-Tbe"/>
                                             <constraint firstItem="uhB-K0-pyS" firstAttribute="width" secondItem="dq8-UO-7e3" secondAttribute="width" multiplier="3:1" id="iBZ-yk-e7t"/>
                                         </constraints>
                                         <viewLayoutGuide key="safeArea" id="7O9-Hh-9Dw"/>
@@ -306,8 +374,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="equalButton" destination="uhB-K0-pyS" id="b1B-b8-xcj"/>
                         <outlet property="finalResult" destination="EtG-ao-BlY" id="mp7-oQ-8z4"/>
                         <outlet property="result" destination="pwG-9B-8U9" id="E74-uU-50B"/>
+                        <outlet property="tipButton" destination="dq8-UO-7e3" id="xn1-7O-GWB"/>
+                        <outlet property="tipFifteen" destination="TFQ-Id-CTu" id="DL6-k4-193"/>
+                        <outlet property="tipTen" destination="4aG-Qx-3fr" id="J9X-iM-Tjq"/>
+                        <outlet property="tipTwenty" destination="gb3-e5-hBA" id="7M1-EQ-kyM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
