@@ -427,6 +427,7 @@
                     <connections>
                         <outlet property="equalButton" destination="uhB-K0-pyS" id="b1B-b8-xcj"/>
                         <outlet property="finalResult" destination="EtG-ao-BlY" id="mp7-oQ-8z4"/>
+                        <outlet property="memorySaveButton" destination="Rbp-X9-U18" id="5Bx-gl-MWd"/>
                         <outlet property="result" destination="pwG-9B-8U9" id="E74-uU-50B"/>
                         <outlet property="tipButton" destination="dq8-UO-7e3" id="xn1-7O-GWB"/>
                         <outlet property="tipFifteen" destination="TFQ-Id-CTu" id="DL6-k4-193"/>

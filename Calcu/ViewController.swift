@@ -28,6 +28,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipButton: UIButton!
     @IBOutlet weak var equalButton: UIButton!
     
+    //memory button
+    
+    @IBOutlet weak var memorySaveButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,20 +39,95 @@ class ViewController: UIViewController {
        // tipButton.layer.borderColor
         tipButton.layer.borderWidth = 1
         
+        if let memoryValue = UserDefaults.standard.string(forKey: "memory"){
+            memorySaveButton.setTitle(memoryValue, for: .normal)
+        }
+        
     }
     
     @IBAction func memoryFunctions(_ sender: UIButton) {
         
         if sender.tag == 19 {
-            if UserDefaults.standard.string(forKey: "memory") == nil {
-                let memory = finalResult.text
-                UserDefaults.standard.set(memory, forKey: "memory")
+            //Memory Save and Recall
+            
+            if let memoryValue = UserDefaults.standard.string(forKey: "memory") {
+                // Has value in userdefaults
+                
+                if finalResult.text != ""  {
+                    if result.text != "" {
+                        let memory = finalResult.text
+                        UserDefaults.standard.set(memory, forKey: "memory")
+                        memorySaveButton.setTitle(memory, for: .normal)
+                        finalResult.text = ""
+                        result.text = ""
+                    }
+                } else {
+                    finalResult.text = ""
+                    result.text = result.text! + memoryValue
+                }
+                
             } else {
+                // No value
+                if finalResult.text != "" {
+                    let memory = finalResult.text
+                    UserDefaults.standard.set(memory, forKey: "memory")
+                    memorySaveButton.setTitle(memory, for: .normal)
+                    finalResult.text = ""
+                    result.text = ""
+                }
+               
+            }
+        } else if sender.tag == 20 {
+            //Memory Clear
+            
+            memorySaveButton.setTitle("m", for: .normal)
+            UserDefaults.standard.removeObject(forKey: "memory")
+            //finalResult.text = ""
+            
+        }
+        else if sender.tag == 21 {
+            //M+ Add to Memory
+
+            if finalResult.text != "" {
+                let addMemory = UserDefaults.standard.string(forKey: "memory")! + "+" + finalResult.text!
+                
+                let expression = NSExpression(format: addMemory)
+                guard let mathValue = expression.expressionValue(with: nil, context: nil) as? Double else {return}
+                
+                let formatter = NumberFormatter()
+                formatter.minimumFractionDigits = 0
+                formatter.maximumFractionDigits = 6
+                
+                guard let value = formatter.string(from: NSNumber(value: mathValue)) else {return}
+                
+                UserDefaults.standard.set(value, forKey: "memory")
+                memorySaveButton.setTitle(value, for: .normal)
                 finalResult.text = ""
-                result.text = result.text! + UserDefaults.standard.string(forKey: "memory")!
+                result.text = ""
+            }
+           
+
+        } else if sender.tag == 22 {
+//            //M- Minus from Memory
+
+            if finalResult.text != "" {
+                let minusMemory = UserDefaults.standard.string(forKey: "memory")! + "-" + finalResult.text!
+                
+                let expression = NSExpression(format: minusMemory)
+                guard let mathValue = expression.expressionValue(with: nil, context: nil) as? Double else {return}
+                
+                let formatter = NumberFormatter()
+                formatter.minimumFractionDigits = 0
+                formatter.maximumFractionDigits = 6
+                
+                guard let value = formatter.string(from: NSNumber(value: mathValue)) else {return}
+                
+                UserDefaults.standard.set(value, forKey: "memory")
+                memorySaveButton.setTitle(value, for: .normal)
+                finalResult.text = ""
+                result.text = ""
             }
         }
-        //TODO: other memory functions
     }
     
     
@@ -116,6 +194,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func equal(_ sender: UIButton) {
+        
         let expression = NSExpression(format: result.text!)
         guard let mathValue = expression.expressionValue(with: nil, context: nil) as? Double else {return}
         
