@@ -32,6 +32,7 @@
                         <color key="backgroundColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4Ze-QG-Ltj" firstAttribute="centerX" secondItem="lmV-c9-2iJ" secondAttribute="centerX" id="SIO-dm-CAM"/>
+                            <constraint firstAttribute="height" constant="48.5" id="lGx-JB-rMn"/>
                             <constraint firstItem="4Ze-QG-Ltj" firstAttribute="centerY" secondItem="lmV-c9-2iJ" secondAttribute="centerY" id="wrr-nS-vCd"/>
                         </constraints>
                     </view>

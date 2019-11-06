@@ -39,21 +39,6 @@ class ModalViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         return 1
     }
-    
-    // Set the spacing between sections
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
-         let cellSpacingHeight: CGFloat = 50
-        
-        return cellSpacingHeight
-    }
-    
-    // Make the background color show through
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor.clear
-        return headerView
-    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let myLog = UserDefaults.standard.array(forKey: "listA") as? [String] {
@@ -85,11 +70,7 @@ class ModalViewController: UIViewController, UITableViewDataSource, UITableViewD
         } else {
             if let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? LogTableViewCell {
                 //set
-                cell.textLabel?.text = "Empty Log"
-                //style
-                cell.textLabel?.textColor = .white
-                cell.textLabel?.textAlignment = .center
-                cell.layer.cornerRadius = 20
+                cell.logLabel.text = "Empty Log"
                 return cell
             }
             return UITableViewCell()
