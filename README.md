@@ -4,7 +4,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/ArmandPretorius/calcu">
-    <img src="nudges_logo.png" alt="Logo" height="80">
+    <img src="Calcu/Assets.xcassets/AppIcon.appiconset/1024.png" alt="Calcu Logo" height="80">
   </a>
 
   <h3 align="center">Calcu</h3>
@@ -38,9 +38,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-
-<img src="nudge_screenshot.png" alt="Logo" width="180">
+ | | 
+--- | --- | --- 
+<img src="screenshots/home_screenshot.png" alt="home calculator screenshot" width="180"> | <img src="screenshots/tips_show_screenshot.png" alt="tips calculator screenshot" width="180"> | | <img src="screenshots/log_screenshot.png" alt="log calculator screenshot" width="180"> 
 
 Calcu is a simple calculator app with basic memory capabilities. You can also use Calcu to calculate appropriate tips for waiters.
 
@@ -84,6 +84,7 @@ The application uses [UserDefaults](https://medium.com/better-programming/userde
 ## Changes
 
 * I would like to make it possible to select a log and use it for the next calculation.
+* I'd also like to add an AC ability.
 * I'd also like to add more gesture based interactions.
 
 <!-- CONTACT -->
@@ -100,4 +101,4 @@ Project Link: [https://github.com/ArmandPretorius/calcu](https://github.com/Arma
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[product-screenshot]: nudge_screenshot.png
+[product-screenshot]: home_screenshot.png
