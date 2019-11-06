@@ -14,13 +14,18 @@ class ViewController: UIViewController, ModalViewControllerDelegate {
     
     var log: [Any] = []
     
-    
     //labels
     @IBOutlet weak var result: UILabel!
     @IBOutlet weak var finalResult: UILabel!
     
-    //tip buttons
+    //Operations
+    @IBOutlet weak var divideButtonOutlet: UIButton!
+    @IBOutlet weak var multiplyButtonOutlet: UIButton!
+    @IBOutlet weak var minusButtonOutlet: UIButton!
+    @IBOutlet weak var plusButtonOutlet: UIButton!
+    @IBOutlet weak var commaButtonOutlet: UIButton!
     
+    //tip buttons
     @IBOutlet weak var tipTen: UIButton!
     @IBOutlet weak var tipFifteen: UIButton!
     @IBOutlet weak var tipTwenty: UIButton!
@@ -29,7 +34,6 @@ class ViewController: UIViewController, ModalViewControllerDelegate {
     @IBOutlet weak var equalButton: UIButton!
     
     //memory button
-    
     @IBOutlet weak var memorySaveButton: UIButton!
     
     override func viewDidLoad() {
@@ -42,6 +46,8 @@ class ViewController: UIViewController, ModalViewControllerDelegate {
         if let memoryValue = UserDefaults.standard.string(forKey: "memory"){
             memorySaveButton.setTitle(memoryValue, for: .normal)
         }
+        
+        
         
     }
     
@@ -149,6 +155,11 @@ class ViewController: UIViewController, ModalViewControllerDelegate {
     
     @IBAction func numbers(_ sender: UIButton)
     {
+        multiplyButtonOutlet.isEnabled = true
+        divideButtonOutlet.isEnabled = true
+        plusButtonOutlet.isEnabled = true
+        minusButtonOutlet.isEnabled = true
+        commaButtonOutlet.isEnabled = true
         
         if finalResult.text != "" {
             result.text = ""
@@ -172,6 +183,12 @@ class ViewController: UIViewController, ModalViewControllerDelegate {
             result.text = finalResult.text
             finalResult.text = ""
         }
+        
+        multiplyButtonOutlet.isEnabled = false
+        divideButtonOutlet.isEnabled = false
+        plusButtonOutlet.isEnabled = false
+        minusButtonOutlet.isEnabled = false
+        commaButtonOutlet.isEnabled = false
         
         if sender.tag == 11 {
             result.text = result.text! + "."

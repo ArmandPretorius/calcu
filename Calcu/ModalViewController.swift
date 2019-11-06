@@ -12,11 +12,9 @@ protocol ModalViewControllerDelegate: class {
     func removeBlurredBackgroundView()
 }
 class ModalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
 
-
-    
     weak var delegate: ModalViewControllerDelegate?
+    let identifier = "LogTableViewCell"
     
     @IBAction func CloseModal(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -36,22 +34,65 @@ class ModalViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let myLog = UserDefaults.standard.array(forKey: "listA"){
+        if let myLog = UserDefaults.standard.array(forKey: "listA") as? [String] {
             return myLog.count
-        } else {
-            return 1
         }
+        return 1
+    }
+    
+    // Set the spacing between sections
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+         let cellSpacingHeight: CGFloat = 50
+        
+        return cellSpacingHeight
+    }
+    
+    // Make the background color show through
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let myLog = UserDefaults.standard.array(forKey: "listA"){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath) as! UITableViewCell
-            cell.textLabel?.text = myLog[indexPath.item] as? String
-            return cell
+        if let myLog = UserDefaults.standard.array(forKey: "listA") as? [String] {
+            
+            if let cell = tableview.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? LogTableViewCell {
+                
+                cell.logLabel.text = myLog[indexPath.item]
+                
+                return cell
+            }
+            
+//            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! UITableViewCell
+//            //set
+//            cell.textLabel?.text = myLog[indexPath.item] as? String
+//            //style
+//            cell.layer.borderWidth = 15
+//            cell.layer.borderColor = UIColor.clear.cgColor
+//            cell.textLabel?.textColor = .white
+//            cell.textLabel?.textAlignment = .center
+//            cell.layer.cornerRadius = 20
+//
+//            let margins: UIEdgeInsets
+//
+//            margins = UIEdgeInsets(top: 200, left: 100, bottom: 0, right: 100)
+//            cell.separatorInset = margins
+//            cell.layoutMargins = margins
+            
+            return UITableViewCell()
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath) as! UITableViewCell
-            cell.textLabel?.text = "Empty Log"
-            return cell
+            if let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? LogTableViewCell {
+                //set
+                cell.textLabel?.text = "Empty Log"
+                //style
+                cell.textLabel?.textColor = .white
+                cell.textLabel?.textAlignment = .center
+                cell.layer.cornerRadius = 20
+                return cell
+            }
+            return UITableViewCell()
         }
         
     }
@@ -64,6 +105,8 @@ class ModalViewController: UIViewController, UITableViewDataSource, UITableViewD
             clearLogButtonOutlet.isHidden = true
         }
         // Do any additional setup after loading the view.
+        
+        tableview.register(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
     }
     
     @IBOutlet weak var clearLogButtonOutlet: UIButton!

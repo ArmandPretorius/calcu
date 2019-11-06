@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F5AE7B62372C53D00C40103 /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AE7B42372C53D00C40103 /* LogTableViewCell.swift */; };
+		3F5AE7B72372C53D00C40103 /* LogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F5AE7B52372C53D00C40103 /* LogTableViewCell.xib */; };
 		3FCA084C23701DC400C01F72 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA084B23701DC400C01F72 /* ModalViewController.swift */; };
 		C43B523823454230003D28E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43B523723454230003D28E7 /* AppDelegate.swift */; };
 		C43B523A23454230003D28E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43B523923454230003D28E7 /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F5AE7B42372C53D00C40103 /* LogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
+		3F5AE7B52372C53D00C40103 /* LogTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogTableViewCell.xib; sourceTree = "<group>"; };
 		3FCA084B23701DC400C01F72 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		C43B523423454230003D28E7 /* Calcu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calcu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C43B523723454230003D28E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F5AE7B32372C51500C40103 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3F5AE7B42372C53D00C40103 /* LogTableViewCell.swift */,
+				3F5AE7B52372C53D00C40103 /* LogTableViewCell.xib */,
+			);
+			path = "Custom Cell";
+			sourceTree = "<group>";
+		};
 		C43B522B23454230003D28E7 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +112,7 @@
 		C43B523623454230003D28E7 /* Calcu */ = {
 			isa = PBXGroup;
 			children = (
+				3F5AE7B32372C51500C40103 /* Custom Cell */,
 				C43B523723454230003D28E7 /* AppDelegate.swift */,
 				C43B523923454230003D28E7 /* ViewController.swift */,
 				C43B523B23454230003D28E7 /* Main.storyboard */,
@@ -234,6 +248,7 @@
 			files = (
 				C43B524223454232003D28E7 /* LaunchScreen.storyboard in Resources */,
 				C43B523F23454232003D28E7 /* Assets.xcassets in Resources */,
+				3F5AE7B72372C53D00C40103 /* LogTableViewCell.xib in Resources */,
 				C43B523D23454230003D28E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +276,7 @@
 			files = (
 				C43B523A23454230003D28E7 /* ViewController.swift in Sources */,
 				3FCA084C23701DC400C01F72 /* ModalViewController.swift in Sources */,
+				3F5AE7B62372C53D00C40103 /* LogTableViewCell.swift in Sources */,
 				C43B523823454230003D28E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
