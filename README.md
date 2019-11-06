@@ -38,9 +38,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
- | | 
---- | --- | --- 
-<img src="screenshots/home_screenshot.png" alt="home calculator screenshot" width="180"> | <img src="screenshots/tips_show_screenshot.png" alt="tips calculator screenshot" width="180"> | | <img src="screenshots/log_screenshot.png" alt="log calculator screenshot" width="180"> 
+| --- | --- | --- |
+| <img src="screenshots/home_screenshot.png" alt="home calculator screenshot" width="180"> | <img src="screenshots/tips_show_screenshot.png" alt="tips calculator screenshot" width="180"> | <img src="screenshots/log_screenshot.png" alt="log calculator screenshot" width="180"> |
 
 Calcu is a simple calculator app with basic memory capabilities. You can also use Calcu to calculate appropriate tips for waiters.
 
