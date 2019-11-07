@@ -53,7 +53,7 @@ This iOS application was build using:
 
 ### Installation
 
-1. Download and Install Xcode [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/) from the App Store
+1. Download and Install Xcode [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/) from the App Store (Only available on MacOS)
 2. Clone the repo
 ```sh
 git clone https:://github.com/ArmandPretorius/calcu.git
@@ -71,11 +71,11 @@ You can save the answer to your memory, recall the memory, add and subtract from
 
 When clicking on the answers, you get presented with the history/log of all your previous calculations. At the bottom you can clear the log.
 
-[View Demo]()
+[View Demo](https://www.youtube.com/watch?v=zh_kbkIF5H0)
 <!-- HOW DOES IT WORK -->
 ## Logic
 
-The application uses [NSMath]() to make the calculations
+The application uses [NSExpressions](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html) to make the calculations
 The application uses [UserDefaults](https://medium.com/better-programming/userdefaults-in-swift-4-d1a278a0ec79) to save the calculation log and memory.
 
 
